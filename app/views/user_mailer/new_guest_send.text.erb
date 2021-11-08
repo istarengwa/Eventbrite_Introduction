@@ -1,0 +1,8 @@
+Bonjour  <%= @admin.first_name %> !
+==========================================================
+
+Vous avez un nouvel invité pour  <%= @attendance.event.title %> qui ce passe le <%= @attendance.event.start_date.strftime("%d/%m/%Y") %>.
+
+Le nouvel invité est <%= @attendance.user.first_name %>.
+
+Merci d'utiliser le service d'Heregade
