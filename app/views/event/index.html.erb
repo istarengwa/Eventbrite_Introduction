@@ -1,7 +1,16 @@
-
+<div class="align-middle text-center">
 <!-- List of Events -->
 <div class="container-fluid">
   	<div class="row">
+        <div class= "col-sm m-2 text-center" >
+		    <div class="card" style="width: 18rem; text-decoration: none;">
+			    <div class="card-body card-event">
+                    <% if user_signed_in? %>
+                        <%= link_to "Create Event", new_event_path , class: "btn btn-success m-2" %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
 	    <% @events.each do |event| %>
 	    	<%= link_to event do %>
 			    <div class= "col-sm m-2 text-center" >
@@ -19,4 +28,6 @@
 			<% end %>
 		<% end %>
 	</div>
+</div>
+
 </div>

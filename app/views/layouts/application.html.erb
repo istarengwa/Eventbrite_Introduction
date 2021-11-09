@@ -28,12 +28,6 @@
             <%= link_to "Create an Event", new_event_path, class: "navbar-brand" %>
           </li>
           <% end %>
-          <li class="nav-item">
-            <%= link_to "Team", root_path, class: "navbar-brand" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Contact us", root_path, class: "navbar-brand" %>
-          </li>
         </ul>
         <ul class="navbar-nav ">
           <% if user_signed_in? %>
