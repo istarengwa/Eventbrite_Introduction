@@ -1,0 +1,31 @@
+<div class ='align-middle text-center'>
+  <div class="card m-5 p-5" style="height:300px">
+    <div class="card-body">
+      <%= form_with(model: @user, url: user_path, method: "put", local: true) do |f| %>
+
+        <%= f.label :first_name %>
+        <div class="row justify-content-center">
+        <p style = "width: 200px"><%= f.text_field :first_name, autocomplete: "new-password" %></p>
+        </div>
+        <br /> <br />
+
+        <%= f.label :last_name %>
+        <div class="row justify-content-center">
+        <p style = "width: 200px"><%= f.text_field :last_name, autocomplete: "new-password" %></p>
+        </div>
+        <br /> <br />
+
+        <%= f.label :description %>
+        <div class="row justify-content-center">
+        <p style = "width: 200px"><%= f.text_area :description, autofocus: true, autocomplete: "" %></p>
+        </div>
+        <br /> <br />
+
+        <div class="row justify-content-center actions">
+        <p style = "width: 200px"><%= f.submit "Update" %></p>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

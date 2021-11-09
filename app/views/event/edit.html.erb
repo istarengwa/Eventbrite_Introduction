@@ -1,0 +1,49 @@
+<div class ='align-middle text-center'>
+  <div class="card m-5 p-5" style="height:300px">
+    <div class="card-body">
+      <%= form_tag url_for(action: 'update'), method: "post" do %>
+
+        <%= label_tag 'Title' %>
+        <div class="row justify-content-center">
+        <p style = "width: 200px"><%= text_field_tag 'title' %></p>
+        </div>
+        <br /> <br />
+
+        <%= label_tag 'Description' %>
+        <div class="row justify-content-center">
+        <p style = "width: 200px"><%= text_area_tag 'description' %></p>
+        </div>
+        <br /> <br />
+
+        <%= label_tag 'Location' %>
+        <div class="row justify-content-center">
+        <p style = "width: 200px"><%= text_field_tag 'location' %></p>
+        </div>
+        <br /> <br />
+
+        <%= label_tag 'Price' %>
+        <div class="row justify-content-center">
+        <p style = "width: 200px"><%= text_field_tag 'price' %></p>
+        </div>
+        <br /> <br />
+
+        <%= label_tag 'Start Date format : (''YYYY-MM-DD HH:mm:ss'')' %>
+        <div class="row justify-content-center">
+        <p style = "width: 200px"><%= text_field_tag 'start_date' %></p>
+        </div>
+        <br /> <br />
+
+        <%= label_tag 'Duration (must be a multiple of 5)' %>
+        <div class="row justify-content-center">
+        <p style = "width: 200px"><%= text_field_tag 'duration' %></p>
+        </div>
+        <br /> <br />
+
+        <div class="row justify-content-center">
+        <p style = "width: 200px"><%= submit_tag "Update Event" %></p>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

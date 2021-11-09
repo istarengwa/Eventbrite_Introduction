@@ -1,1 +1,22 @@
-<h1>Events</h1>
+
+<!-- List of Events -->
+<div class="container-fluid">
+  	<div class="row">
+	    <% @events.each do |event| %>
+	    	<%= link_to event do %>
+			    <div class= "col-sm m-2 text-center" >
+			     	<div class="card" style="width: 18rem; text-decoration: none;">
+			        	<div class="card-body card-event">
+			        		<p class="text-info"><%= event.location %></p>
+			         		<h5 class="text-info"><%= event.title %></h5>
+			         		<p class="text-info"><%= event.start_date.strftime("%B %d, %Y")%></p>
+			         		<% if user_signed_in? %>
+			          		<%= link_to "Buy Now", new_attendance_path , class: "btn btn-danger text-white m-2" %>
+			          		<% end %>
+			       		</div>
+			      	</div>
+			    </div>
+			<% end %>
+		<% end %>
+	</div>
+</div>
