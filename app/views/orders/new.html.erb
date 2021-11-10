@@ -1,0 +1,17 @@
+<%= form_tag event_orders_path do %>
+  <article>
+    <div class="text-center m-5">
+      <h3>To continue, confirm a payment with our partner Stripe</h3>
+    <label class="amount mt-5">
+      <span>Amount: <%= @amount%> $</span>
+    </label>
+  </div>
+  </article>
+  <div class="text-center m-5">
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Ticket to <%= @event.title%> on the <%= @event.start_date.strftime("%h %d, %Y") %>"
+          data-amount="<%= @amount*100 %>"
+          data-locale="auto"></script>
+  </div>
+<% end %>
