@@ -1,5 +1,5 @@
 class EventController < ApplicationController
-
+  
     def index
         @events = Event.all
       end
@@ -7,6 +7,7 @@ class EventController < ApplicationController
     def show
         @event = Event.find(params[:id])
         @admin = User.find(@event.admin_id)
+        @event_admin_id = Event.find(params[:id]).admin_id
         @nb_guests = Attendance.where(event_id: @event.id).count
     end
 

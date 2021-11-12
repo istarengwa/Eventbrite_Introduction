@@ -18,10 +18,14 @@
     	<p class="card-title"> <strong>Description : </strong></br></br> <%= @event.description %></p></br>  </br> 
     	<p class="card-title"><strong>Event created the : </strong><%= @event.created_at.strftime("%d/%m/%Y") %></p>
     	</br>	
-   		<p class="card-title"><strong>Price :</strong> <%= @event.price %>$ <%= link_to "Buy Now", new_event_order_path(@event) , class: "btn btn-danger text-white float-right" %></p>
 
-   		<p  class="card-title">This show has <%= @nb_guests %> participants</p>
+      <%if current_user.id == @event_admin_id %>
+      <p> Tu organises cet évènement ! </p>
+      <br />
 
+      <%else%>
+      <p class="card-title"><strong>Price :</strong> <%= @event.price %>$ <%= link_to "Buy Now", new_event_order_path(@event) , class: "btn btn-danger text-white float-right" %></p>
+      <%end%>
     </div>
   </div>
 </div>
